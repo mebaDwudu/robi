@@ -1,0 +1,6 @@
+{
+  "name": "Store Management System",
+  "description": "Retail management suite with separate Customer Storefront (/customer) and dedicated Admin Portal (/admin) for Top Fruit and Veg, Pitch 18 Brixton Market Pope's Road London.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

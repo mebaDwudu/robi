@@ -1,0 +1,16 @@
+{
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/admin(.*)", "destination": "/admin.html" },
+    { "source": "/boss(.*)", "destination": "/admin.html" },
+    { "source": "/cashier(.*)", "destination": "/cashier.html" },
+    { "source": "/customer(.*)", "destination": "/customer.html" },
+    { "source": "/market(.*)", "destination": "/customer.html" },
+    { "source": "/orders(.*)", "destination": "/admin.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}

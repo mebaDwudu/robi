@@ -1,0 +1,132 @@
+{
+  "entities": {
+    "products": {
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "sku": { "type": "string" },
+        "barcode": { "type": "string" },
+        "category": { "type": "string" },
+        "costPrice": { "type": "number" },
+        "sellingPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "minStockLevel": { "type": "number" },
+        "unit": { "type": "string" },
+        "supplierId": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "categories": {
+      "fields": {
+        "name": { "type": "string" }
+      }
+    },
+    "orders": {
+      "fields": {
+        "id": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discountTotal": { "type": "number" },
+        "taxTotal": { "type": "number" },
+        "grandTotal": { "type": "number" },
+        "totalCost": { "type": "number" },
+        "grossProfit": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "customers": {
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "loyaltyPoints": { "type": "number" },
+        "totalSpent": { "type": "number" },
+        "totalOrders": { "type": "number" },
+        "tier": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "suppliers": {
+      "fields": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "contactPerson": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "suppliedCategories": { "type": "array" },
+        "activeOrdersCount": { "type": "number" }
+      }
+    },
+    "purchaseOrders": {
+      "fields": {
+        "id": { "type": "string" },
+        "poNumber": { "type": "string" },
+        "supplierId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "orderDate": { "type": "string" }
+      }
+    },
+    "stockMovements": {
+      "fields": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productName": { "type": "string" },
+        "type": { "type": "string" },
+        "quantityChange": { "type": "number" },
+        "previousStock": { "type": "number" },
+        "newStock": { "type": "number" },
+        "timestamp": { "type": "string" }
+      }
+    },
+    "settings": {
+      "fields": {
+        "storeName": { "type": "string" },
+        "taxRatePercent": { "type": "number" },
+        "currencySymbol": { "type": "string" }
+      }
+    },
+    "shifts": {
+      "fields": {
+        "id": { "type": "string" },
+        "openedAt": { "type": "string" },
+        "isOpen": { "type": "boolean" },
+        "totalSales": { "type": "number" }
+      }
+    },
+    "customerOrders": {
+      "fields": {
+        "id": { "type": "string" },
+        "orderCode": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "fulfillmentType": { "type": "string" },
+        "deliveryLocation": { "type": "string" },
+        "items": { "type": "array" },
+        "totalItems": { "type": "number" },
+        "totalAmount": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "feedbacks": {
+      "fields": {
+        "id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "rating": { "type": "number" },
+        "category": { "type": "string" },
+        "comment": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    }
+  }
+}

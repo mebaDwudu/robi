@@ -1,0 +1,99 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 256;
+    }
+
+    // --- Products Collection ---
+    match /products/{productId} {
+      allow read: if true;
+      allow write: if isValidId(productId);
+    }
+
+    // --- Categories Collection ---
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isValidId(categoryId);
+    }
+
+    // --- POS Orders Collection ---
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if isValidId(orderId);
+    }
+
+    // --- Customer Online Orders Collection (Real-Time Customer -> Admin Sync) ---
+    match /customer_orders/{orderId} {
+      allow read: if true;
+      allow write: if isValidId(orderId);
+    }
+
+    // --- Customer Feedbacks & Reviews Collection ---
+    match /feedbacks/{feedbackId} {
+      allow read: if true;
+      allow write: if isValidId(feedbackId);
+    }
+
+    // --- Customers Collection ---
+    match /customers/{customerId} {
+      allow read: if true;
+      allow write: if isValidId(customerId);
+    }
+
+    // --- Suppliers Collection ---
+    match /suppliers/{supplierId} {
+      allow read: if true;
+      allow write: if isValidId(supplierId);
+    }
+
+    // --- Purchase Orders Collection ---
+    match /purchase_orders/{poId} {
+      allow read: if true;
+      allow write: if isValidId(poId);
+    }
+
+    // --- Stock Movements Collection ---
+    match /stock_movements/{movementId} {
+      allow read: if true;
+      allow write: if isValidId(movementId);
+    }
+
+    // --- Settings Collection ---
+    match /settings/{settingId} {
+      allow read: if true;
+      allow write: if isValidId(settingId);
+    }
+
+    // --- Staff Collection ---
+    match /staff/{staffId} {
+      allow read: if true;
+      allow write: if isValidId(staffId);
+    }
+
+    // --- Expenses Collection ---
+    match /expenses/{expenseId} {
+      allow read: if true;
+      allow write: if isValidId(expenseId);
+    }
+
+    // --- Audit Logs Collection ---
+    match /audit_logs/{logId} {
+      allow read: if true;
+      allow write: if isValidId(logId);
+    }
+
+    // --- Shifts Collection ---
+    match /shifts/{shiftId} {
+      allow read: if true;
+      allow write: if isValidId(shiftId);
+    }
+
+    // Fallback: Deny any undocumented top-level or sub-collections
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
+
